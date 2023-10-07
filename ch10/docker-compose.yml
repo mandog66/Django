@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+
+  web:
+    build: .
+    command: python ${PROJECTNAME}/manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - type: bind
+        source: ./
+        target: /usr/src/app
+    networks:
+      - app-net
+
+networks:
+  app-net:

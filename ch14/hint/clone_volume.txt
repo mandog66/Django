@@ -1,0 +1,1 @@
+docker run --rm --volumes-from ch07-db-1 -v mydb:/target alpine sh -c "cp -rp /var/lib/mysql/. /target"

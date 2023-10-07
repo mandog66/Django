@@ -1,0 +1,48 @@
+<!-- ch08_form.html -->
+{% extends "ch08_base.html" %}
+{% block title %} I have something to talk! {% endblock %}
+{% block content %}
+<div class='container'>
+    <form name="my form" action="" method="GET">
+        <label for="byear">Year : </label>
+        <select name="byear">
+            {% for year in years %}
+            <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
+
+        <br>
+
+        Color : 
+        <input type="checkbox" name="fcolor" value="Green">Green
+        <input type="checkbox" name="fcolor" value="Red">Red
+        <input type="checkbox" name="fcolor" value="Blue">Blue
+        <input type="checkbox" name="fcolor" value="Yellow">Yellow
+        <input type="checkbox" name="fcolor" value="Orange">Orange
+
+        <br>
+
+        <label for="user_id">Your ID : </label>
+        <input id="user_id" type="text" name="user_id">
+        <label for="user_pass">Your Password : </label>
+        <input id="user_pass" type="password" name="user_pass">
+        <input type="submit" value="Login">
+        <input type="reset" value="Reset">
+    </form>
+
+    Your ID : {{ urid | default:"None" }}</br>
+    Year : {{ byear | default:"None" }}</br>
+    Color : 
+    {% for c in urfcolor %}
+        {{ c }}
+    {% empty %}
+        None
+    {% endfor %}
+    </br>
+    {% if verified %}
+        <em>Pass</em>
+    {% else %}
+        <em>Error</em>
+    {% endif %}
+</div>
+{% endblock %}

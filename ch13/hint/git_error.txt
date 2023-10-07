@@ -1,0 +1,14 @@
+如果github資料夾有箭頭無法開啟，因為資料夾(folder)內有其他.git所以被認為是子模塊，要刪掉並重新上傳
+
+cd folder
+# -f deletes read-only files immediately, without asking for confirmation. 
+        When you specify this option and a file does not exist, rm does not display a warning message and does not modify the exit status. 
+        If you specify both -f and -i, rm uses the option that appears last on the command line.
+# -R recursively removes the entire directory structure if file is a directory.
+rm -rf .git
+
+cd ..
+git rm --cache folder
+git add folder
+git commit -m "Message"
+git push

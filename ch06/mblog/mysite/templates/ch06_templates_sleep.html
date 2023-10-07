@@ -1,0 +1,20 @@
+<!-- ch06_templates_sleep.html -->
+
+{% extends "ch06_base.html" %}
+{% block title %} Sleep Stream {% endblock %}
+{% block tvname %} Now Playing : {{ tv.name }} {% endblock %}
+{% block menu %}
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="/">HOME</a></li>
+        {% for tv in tv_list %}
+            <li><a href="/ch06_templates_sleep/{{ forloop.counter0 }}/">{{ tv.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+{% block content %}
+    <div class="conatiner">
+        <div id="tvcode" align='center'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ tv.tvcode }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!-- ch09_plotly.html -->
+{% extends "ch09_base.html" %}
+{% block title %}.CSV Data{% endblock %}
+{% block content %}
+<div class='container'>
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+    <div class='row'>
+        <div class='col-md-12'>
+            <h3 class="alert alert-primary">.CSV Data</h3>
+        </div>
+    </div>
+    <div class='row'>
+        <div class="col-md-6">
+            {% autoescape off %}
+            {{ plot_div }}
+            {% endautoescape %}
+        </div>
+        <div class='col-md-6'>
+            <table class="table table-striped table-sm">
+                <tr>
+                    <td>Name</td>
+                    <td>ID</td>
+                    <td>Sex</td>
+                    <td>Num</td>
+                </tr>
+                {% for d in data %}
+                <tr>
+                    <td>{{ d.name }}</td>
+                    <td>{{ d.id }}</td>
+                    {% if d.sex %}
+                        <td>M</td>
+                    {% else %}
+                        <td>F</td>
+                    {% endif %}
+                    <td>{{ d.num }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>    
+{% endblock %}

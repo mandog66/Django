@@ -1,0 +1,22 @@
+<!-- ch09_plotly_3D.html -->
+{% extends "ch09_base.html" %}
+{% block title %}Plotly 3D{% endblock %}
+{% block content %}
+<div class='container'>
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+    <div class='row'>
+        <div class='col-md-12'>
+            <h3 class="alert alert-primary">Plotly 3D</h3>
+        </div>
+    </div>
+    <div class='row'>
+        <div class="col-md-12">
+            {% autoescape off %}
+            {{ plot_div }}
+            {% endautoescape %}
+        </div>
+    </div>
+</div>    
+{% endblock %}

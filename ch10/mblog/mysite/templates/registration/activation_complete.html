@@ -1,0 +1,16 @@
+<!-- activation_complete.html -->
+<!-- 當帳號完成啟用顯示的畫面-->
+{% extends "ch10_base.html" %}
+{% block title %}分享日誌{% endblock %}
+{% block content %}
+<div class='container'>
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+    <div class='row'>
+        <div class='col-md-12'>
+            <h3 class="alert alert-warning">帳號啟用成功，感謝你的註冊!</h3>
+        </div>
+    </div>
+</div>    
+{% endblock %}

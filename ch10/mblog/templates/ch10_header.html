@@ -1,0 +1,35 @@
+<!-- ch10_header.html -->
+<nav class='navbar navbar-default'>
+    <div class='container-fluid'>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                {% load static %}
+                <img src="{% static 'images/logo.png' %}" width="100">
+                <a class="navbar-brand" href="#">分享日誌</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="/ch09_post">Home</a>
+                        {% if username %}
+                            <a class="nav-link" href="/ch09_userinfo">個人資料</a>
+                            <a class="nav-link" href="/ch10_userinfo">個人資料(修改)</a>
+                            <a class="nav-link" href="/ch09_postDiary">寫日誌</a>
+                            <a class="nav-link" href="/ch08_contact">連絡管理員</a>
+                            <a class="nav-link" href="/ch09_logout">登出</a>
+                            {% else %}
+                            <a class="nav-link" href="/ch09_login">登入</a>
+                            <a class="nav-link" href="/admin/login/?next=/ch09_post/">Django 登入</a>
+                            <a class="nav-link" href="/ch09_csvdata">.csv data</a>
+                            <a class="nav-link" href="/ch09_plotly">Plotly</a>
+                            <a class="nav-link" href="/ch09_plotly_3D">Plotly 3D</a>
+                            <a class="nav-link" href="/accounts/register/">註冊</a>
+                            <a class="nav-link" href="/admin">後台管理</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+          </nav>
+    </div>
+</nav>

@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+  web:
+    image: django:v1
+    command: python ${PROJECTNAME}/manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - type: bind
+        source: ./
+        target: /usr/src/app
+    networks:
+      - app-net
+
+  db:
+    image: mariadb:10.6
+    ports:
+      - "3307:3306"
+    volumes:
+      - mydb:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+      - app-net
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_ARBITRARY=${PMA_ARBITRARY}
+    networks:
+      - app-net
+
+networks:
+  app-net:
+
+volumes:
+  mydb:
+    external: true

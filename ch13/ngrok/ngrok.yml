@@ -1,0 +1,9 @@
+authtoken: 2VPytEx0XcTgxZUJebbzz2Uorih_27BwF3J1PcyPweXGa5vni
+web_addr: 0.0.0.0:4040
+version: 2
+region: jp
+console_ui: True
+tunnels:
+    web:
+        addr: 8000
+        proto: http

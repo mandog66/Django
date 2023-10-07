@@ -1,0 +1,21 @@
+<!-- ch09_userinfo.html -->
+{% extends "ch09_base.html" %}
+{% block title %}分享日誌{% endblock %}
+{% block content %}
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-12'>
+            <h3 class="alert alert-primary">使用者資訊</h3>
+        </div>
+    </div>
+    <p>
+        UserName : {{ userinfo.user.username }}
+        <br>
+        UserEmail : {{ userinfo.user.email }}
+        <br>
+        Height : {{ userinfo.height }} cm
+        <br>
+        Sex : {{ userinfo.male | yesno:" M, F " }}
+    </p>
+</div>    
+{% endblock %}

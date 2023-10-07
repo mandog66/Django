@@ -1,0 +1,2 @@
+切換到這個檔案 : /usr/local/lib/python3.10/site-packages/mezzanine/utils/html.py
+在113行改成 : protocols=list(ALLOWED_PROTOCOLS) + ["tel"],

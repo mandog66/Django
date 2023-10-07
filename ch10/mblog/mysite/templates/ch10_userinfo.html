@@ -1,0 +1,44 @@
+<!-- ch10_userinfo.html -->
+{% extends "ch10_base.html" %}
+{% block title %}分享日誌{% endblock %}
+{% block content %}
+<div class='container'>
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class="card">
+                <div class="card-header" align=center>
+                    <h3>使用者資訊</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class="card">
+                <div class="card-header" align=center>
+                    {{ profile.user.username | upper }}
+                </div>
+                <div class="card-body">
+                    Email : {{ profile.user.email }}
+                    <br>
+                    Height : {{ profile.height }}
+                    <br>
+                    Sex : {{ profile.male | yesno:"M, F" }}
+                    <br>
+                    Web : <a href="{{ profile.website }}">{{ profile.website }}</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <form name="my form" action="." method="post">
+        {% csrf_token %}
+        <table class="table table-striped">
+            {{ profile_form.as_table }}
+        </table>
+        <input type="submit" value="修改個人資料">
+    </form>
+</div>    
+{% endblock %}

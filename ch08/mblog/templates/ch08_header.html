@@ -1,0 +1,26 @@
+<!-- ch08_header.html -->
+<nav class='navbar navbar-default'>
+    <div class='container-fluid'>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                {% load static %}
+                <img src="{% static 'images/logo.png' %}" width="100">
+                <a class="navbar-brand" href="#">不吐不快</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/ch08_list/">瀏覽訊息</a>
+                    <a class="nav-link" href="/ch08_post/">張貼訊息</a>
+                    <a class="nav-link" href="/ch08_contact/">連絡管理員</a>
+                    <a class="nav-link" href="/ch08_postdb/">Postdb</a>
+                    <a class="nav-link" href="/ch08_bmi/">BMI</a>
+                    <a class="nav-link" href="/admin">後台管理</a>
+                </div>
+                </div>
+            </div>
+          </nav>
+    </div>
+</nav>

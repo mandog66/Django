@@ -1,0 +1,1 @@
+docker compose run --rm web django-admin startproject ${COMPOSE_PROJECT_NAME}

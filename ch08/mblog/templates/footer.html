@@ -1,0 +1,10 @@
+<!--footer.html-->
+
+{% block footer %}
+    {% if now %}
+    <p style="font-family: 微軟正黑體;">Time : {{ now }}</p>
+    {% else %}
+    <p style="font-family: 微軟正黑體;">Content From Internet</p>
+    {% endif %}
+    <p style="font-family: 微軟正黑體;">今日佳句：{{ quote }}</p>
+{% endblock %}

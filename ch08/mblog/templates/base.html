@@ -1,0 +1,67 @@
+<!--base.html-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            {% block title %} {% endblock %}
+        </title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            {% include 'header.html' %}
+            <div class="row">
+                <div class="col-sm-3 col-md-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Menu</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="list-group">
+                                <a href="/" class="list-group-item">HOME</a>
+                                <a href="https://google.com/news" class="list-group-item">News</a>
+                                <a href="https://youtube.com/" class="list-group-item">Youtube</a>
+                                <a href="/list" class="list-group-item">List</a>
+                                <a href="/about" class="list-group-item">About Me</a>
+                                <a href="/ch06_templates_lofi" class="list-group-item">Lofi</a>
+                                <a href="/ch06_templates_sleep" class="list-group-item">Sleep</a>
+                                <a href="/ch06_templates_carlist" class="list-group-item">Car List</a>
+                                <a href="/ch07_Model_db" class="list-group-item">Model and DB</a>
+                                <a href="/ch08_form" class="list-group-item">Form</a>
+                                <a href="/ch08_post" class="list-group-item">Post</a>
+                                <a href="/ch08_list" class="list-group-item">List</a>
+                                <a href="/ch08_contact/" class="list-group-item">連絡管理員</a>
+                                <a href="/ch08_postdb/" class="list-group-item">Postdb</a>
+                                <a href="/ch08_bmi/" class="list-group-item">BMI</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sd-9 col-md-9">
+                    <div class="card">
+                        <div class="card-header">
+                            {% block headmessage %} {% endblock %}
+                        </div>
+                        <div class="card-body">
+                            {% block content %} {% endblock %}
+                        </div>
+                        <div class="card-footer">
+                            {% include 'footer.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    </body>
+</html>

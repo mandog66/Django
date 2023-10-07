@@ -1,0 +1,20 @@
+<!-- index.html -->
+{% extends 'base.html' %}
+{% block title %} TEST {% endblock %}
+{% block headmessage %}
+<h3 style="font-family: 標楷體;">TEST</h3>
+{% endblock %}
+{% block content %}
+<div>
+    This is Test version.
+</div>
+{% if user.is_authenticated %}
+<div>
+    Hello {{ user }}!
+</div>
+{% else %}
+<div>
+    Hello User!
+</div>
+{% endif %}
+{% endblock %}
